@@ -27,16 +27,9 @@
 
 <section>
 
-
 <?php ?>
-<?php
-$args = array(
-	'post_type' => 'post',
-	'posts_per_page' => 3,
-);
-$the_query = new WP_query( $args );
-if ( $the_query->have_posts() ) : ?>
-	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?> 
+<?php  if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?> 
 <div class="list">
 <figure><?php the_post_thumbnail('full'); ?></figure>
 <div class="text">
